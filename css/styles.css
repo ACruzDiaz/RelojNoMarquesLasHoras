@@ -1,0 +1,290 @@
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-size: 1rem;
+
+}
+body{
+    position: relative;
+    overflow: auto;
+    div.pantallaSecundaria{
+
+        display: none;
+        z-index: 6;
+        justify-content: center;
+        align-items: center;
+        color: white;
+        background-color: rgba(0, 0, 0, 0.735);
+        width: 100%;
+        height: 100%;
+        position: fixed;
+        div.editarContainer{
+            position: relative;
+            border-radius: 1rem;
+
+            & > div.titleEdit{
+                display: flex;
+                gap: 1rem;
+                align-items: center;
+                h1{
+                    font-size: 1.5rem;
+                    width: fit-content;
+                }
+                & > img{
+                    height: 1.5rem;
+                    width: 1.5rem;
+                    cursor: pointer;
+                }
+            }
+            div.tiempoContainer{
+                display: flex;
+                gap: 1rem;
+                width: 100%;
+                justify-content: space-between;
+                padding: 2rem 0;
+                div.edit{
+                    display: flex;
+                    flex-direction: column;
+                    /* justify-content: center; */
+                    align-items: center;
+                    gap: 16px;
+                }
+                div.edit input{
+                    font-size: 1rem;
+                    &.setHora{
+                        &::after{
+                            position: absolute;
+                            left: 6.5rem;
+                            content:":";
+                        }
+                    }
+                    &.setMin{
+                        &::after{
+                            position: absolute;
+                            left: 13rem;
+                            content:":";
+                        }
+                    }
+                }
+                div div.sumar{
+                    cursor: pointer;
+                    width: 0px;
+                    height: 0px;
+                    border-style: solid;
+                    border-width: 0 1.5rem 1rem 1.5rem;
+                    border-color: transparent transparent #ffffff transparent;
+                    transform: rotate(0deg);
+                }
+                div div.restar{
+                    cursor: pointer;
+                    width: 0px;
+                    height: 0px;
+                    border-style: solid;
+                    border-width: 17px 24.5px 0 24.5px;
+                    border-color: #FF4532 transparent transparent transparent;
+                    transform: rotate(0deg);
+                }
+
+
+
+            }
+            div.editarNombre{
+                display: flex;
+                gap: 1rem;
+                width: 100%;
+                padding: 2rem 0;
+                & >img {
+                    filter: invert(1);
+                    width: 1rem;
+                    height: 1rem;
+                }
+                & > input {
+                    width: 100%;
+                    color: #ffffff;
+                    background-color: black;
+                    border-color: black;
+                    border-bottom-color: white;
+                }
+
+            }
+            div.botones{
+                display: flex;
+                gap: 2rem;
+                justify-content: center;
+                padding: 1rem 0;
+                &  > input{
+                    padding: 0.5rem;
+                    &#guardar{
+                        background-color: tomato;
+                        border: none;
+                    }
+                    &#cancelar{
+                        background-color: white;
+                        border: none;
+                    }
+                }
+            }
+            padding: 2rem;
+            display: flex;
+            flex-direction: column;
+            background-color: black;
+            width: 320px;
+            height: 400px;
+        }
+    }
+    header{
+        display: flex;
+        justify-content: center;
+        padding: 1rem;
+        h1{
+            font-size: 1.5rem;
+            justify-self: start;
+        }
+    }
+    main{
+        
+        z-index: 1;
+        position: relative;
+        padding: 1.5rem;
+        padding-top: 5rem;
+        display: grid;
+        grid-auto-flow: dense;
+        grid-auto-rows: 300px;
+        grid-template-columns: repeat(auto-fit,minmax(300px, 1fr));
+        width: 100%;
+        gap: 1.5rem;
+
+        div.objetoReloj{
+            transition: 250ms;
+            &:hover{
+                background-color: rgb(181, 181, 181);
+                transform: translateY(-0.5rem);
+                transition: 250ms;
+                box-shadow:
+                1.4px 2.4px 2.6px -4px rgba(0, 0, 0, 0.094),
+                3.5px 5.8px 5px -4px rgba(0, 0, 0, 0.139),
+                6.5px 10.8px 10.7px -4px rgba(0, 0, 0, 0.186),
+                12px 20px 27px -4px rgba(0, 0, 0, 0.29);
+
+            }
+            display: grid;
+            grid-template-areas:
+            "titulo titulo"
+            "tiempo tiempo"
+            "play restart";
+            grid-template-rows: min-content;
+            border-radius: 1rem;  
+            background-color: lightgray;
+
+            h2.tituloReloj{
+                color: white;
+                grid-area: titulo;
+                padding: 1rem;
+                background-color: rgb(40, 55, 90);
+                border-radius: 1rem 1rem 0 0;
+
+            }
+            p.tiempo{
+                pointer-events: none;
+                align-self: center;
+                justify-self: center;
+                grid-area: tiempo;
+                padding:0 1rem;
+                span{
+                    font-size: 4rem;   
+                }
+            }
+            button{
+                border: 1px solid black;
+                border-radius: 2rem;
+                height: 3rem;
+                width: 3rem;
+                margin: 1rem;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                img{
+                    height: 2rem;
+                    width: 2rem;
+                    padding: 0.25rem;
+                    object-fit: contain;
+                    pointer-events: none;
+                } 
+
+            }
+            button.botonPlay{
+                grid-area: play;
+                justify-self: end; 
+                background-image: url("../img/play-button.png"); 
+                background-size: cover;
+                background-repeat: no-repeat;
+                &:hover{
+                    filter: invert(1);
+                    transition-duration: 250ms;
+                }
+
+            }
+            button.botonPause{
+                grid-area: play;
+                justify-self: end;  
+                background-image: url("../img/pause.png");
+                background-size: cover;
+                background-repeat: no-repeat;
+                &:hover{
+                    filter: invert(1);
+                    transition-duration: 250ms;
+                }
+                
+
+
+            }
+            button.botonRestart{
+                grid-area: restart;
+                justify-self: start;
+                &:hover{
+                    filter: invert(1);
+                    transition-duration: 250ms;
+                }
+
+            }
+        }
+    }
+    footer{
+        div.agregarReloj{
+            z-index: 5;
+            position: fixed;
+            bottom: 1rem;
+            right: 1rem;
+            width: 4rem;
+            height: 4rem;
+            border-radius: 2rem;
+            object-fit: cover;
+            background-color: #ffffff;
+            &:hover {
+                filter: invert(1);
+            }
+            & > img{
+                width: 100%;
+                height: 100%;
+            }
+
+        }
+    }
+}
+
+
+.mainTitle {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: black;
+    color: white;
+    z-index: -1;
+    transform: skewY(-11deg);
+    transform-origin: top left;
+}

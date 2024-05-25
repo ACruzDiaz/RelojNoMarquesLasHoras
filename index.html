@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/styles.css">
+    <title data-alan = 'Mi RELOJ'>Reloj</title>
+</head>
+<body>
+    <div class="pantallaSecundaria">
+        <div>
+            <div class="editarContainer">
+                
+                <div class="titleEdit">
+                    <h1 class="firsttitle">Editar temporizador</h1>
+                    <img class="borrarReloj" src="./img/delete.png" alt="borrar">
+                </div>
+                <div class="tiempoContainer">
+                    <div class="edit horasContainer">
+                        <div><div class="sumar Hora"></div></div>
+                        <input type="number" name="Horas" id="setHora" min="0" max="99">
+                        <div><div class="restar Hora"></div></div>
+                        <div></div>
+                    </div>
+                    <div class="edit minContainer">
+                        <div><div class="sumar Min"></div></div>
+                        <input type="number" name="Minutos" id="setMin" min="0" max="59">
+                        <div><div class="restar Min"></div></div>
+                        <div></div>
+                    </div>
+                    <div class="edit sec">
+                        <div><div class="sumar Sec"></div></div>
+                        <input type="number" name="Segundos" id="setSeg" min="0" max="59">
+                        <div><div class="restar Sec"></div></div>
+                        <div></div>
+                    </div>
+                </div>
+
+
+                <div class="editarNombre">
+                    <img src="./img/editing.png" alt="editar">
+                    <input type="text" name="texto" id="userInput">
+                </div>
+
+                <div class="botones">
+                    <input id="guardar" type="button" value="Guardar">
+                    <input id="cancelar" type="button" value="Cancelar">
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+    <header class="mainTitle">
+        <h1 >Tu tiempo</h1>
+    </header>
+
+    <main>
+        <!-- <div class="objetoReloj">
+            <h2 class="tituloReloj">Nombre del reloj</h2>
+            <p class="tiempo">
+                <span class="disHor">00</span>
+                <span>:</span>
+                <span class="disMin">00</span>
+                <span>:</span>
+                <span class="disSeg">00</span>
+            </p>
+            <div class="botonPlay"><img src="./img/play-button.png" alt="botonplay"></div>
+            <div class="botonRestart"><img src="./img/restart.png" alt="botonrestart"></div>
+        </div>  -->
+
+
+    </main>
+    <footer>
+        <div class="agregarReloj">
+            <img src="./img/add.png" alt="agregar">
+        </div>
+
+    </footer>
+    <script src="./js/test.js"></script>
+</body>
+</html>
